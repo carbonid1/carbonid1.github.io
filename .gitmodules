@@ -1,3 +1,6 @@
 [submodule "webDevBlogN1"]
 	path = webDevBlogN1
 	url = https://github.com/carbonid1/webDevBlogN1.git
+[submodule "Random-Quotes-Generator"]
+	path = Random-Quotes-Generator
+	url = https://github.com/carbonid1/Random-Quotes-Generator.git
