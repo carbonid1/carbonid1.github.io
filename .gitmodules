@@ -4,3 +4,6 @@
 [submodule "Random-Quotes-Generator"]
 	path = Random-Quotes-Generator
 	url = https://github.com/carbonid1/Random-Quotes-Generator.git
+[submodule "Calendar"]
+	path = Calendar
+	url = https://github.com/carbonid1/Calendar.git
