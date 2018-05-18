@@ -7,3 +7,6 @@
 [submodule "Calendar"]
 	path = Calendar
 	url = https://github.com/carbonid1/Calendar.git
+[submodule "Calculator"]
+	path = Calculator
+	url = https://github.com/carbonid1/Calculator.git
