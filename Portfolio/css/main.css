@@ -6,11 +6,16 @@
   background-image: url("../img/bg-sea.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 80vh;
   margin: 0;
   width: 100%;
 }
 
 .wrapper .header {
   padding: 20px;
+}
+
+.disqus {
+  margin: 0 auto;
+  width: 80%;
 }
