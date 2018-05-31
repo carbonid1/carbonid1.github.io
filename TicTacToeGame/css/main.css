@@ -1,13 +1,31 @@
 body {
-  position: relative;
+  background-color: #EECA44;
 }
 
 .wrapper {
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
+}
+
+.header {
+  color: #1531AE;
+  font-family: 'Indie Flower', cursive;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.field-container {
   background-color: #003056;
   border: 2px solid #05528A;
   display: grid;
   grid-template-columns: repeat(3, 15vw);
-  margin: 20vh auto;
   width: 45vw;
 }
 
@@ -28,20 +46,65 @@ body {
 }
 
 .block .X {
-  display: block;
+  display: none;
   fill: #46D8C0;
 }
 
 .block .O {
-  display: block;
+  display: none;
   fill: #F3CF39;
 }
 
-.moduleWindow {
-  background-color: #000;
+.modal-window {
+  align-items: center;
+  background-color: #4ECDC4;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
   height: 100%;
-  opacity: 0.2;
+  justify-content: center;
+  left: 0;
+  opacity: 0.9;
+  overflow-x: hidden;
   position: fixed;
+  top: 0;
+  transition: 0.5s;
   width: 0;
   z-index: 1;
+}
+
+button {
+  background-color: #483D3F;
+  border: 2px solid #E4FDE1;
+  border-radius: 5px;
+  color: #FFDBB5;
+  margin-right: 30px;
+  transition: 0.3s all;
+}
+
+button:hover {
+  transform: scale(1.2);
+  transition: 0.3s all;
+}
+
+button:focus{
+  outline: none;
+}
+
+.modal-content .one-player-btn {
+  opacity: 0.6;
+}
+
+.modal-content .one-player-btn:hover {
+  transform: none;
+}
+
+.modal-content .two-players-btn {
+  margin-right: 0;
+}
+
+.again-btn {
+  position: absolute;
+  right: 40px;
+  top: 40px;
 }
