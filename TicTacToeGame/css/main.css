@@ -21,11 +21,36 @@ body {
   margin-bottom: 30px;
 }
 
+.score-table {
+  background-color: #003056;
+  border: 2px solid #05528A;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  font-weight: bold;
+  justify-content: space-around;
+  width: 15vw;
+  height: 50px;
+}
+
+.score-table .score-x {
+  color: #46D8C0;
+}
+
+.score-table .score-o {
+  color: #F3CF39;
+}
+
 .field-container {
   background-color: #003056;
   border: 2px solid #05528A;
   display: grid;
   grid-template-columns: repeat(3, 15vw);
+  position: relative;
   width: 45vw;
 }
 
@@ -103,8 +128,35 @@ button:focus{
   margin-right: 0;
 }
 
-.again-btn {
+.nav {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  height: 50px;
+  justify-content: space-around;
+  margin-top: 30px;
+  width: 45vw;
+}
+
+.toMenu-btn {
+  margin: 0;
+}
+
+.results-module {
+  background-color: #008091;
+  border: 2px solid #A7DEFA;
+  border-radius: 5px;
+  color: #E4FF00;
+  display: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  height: 60px;
+  left: 120px;
+  line-height: 60px;
+  opacity: 0.9;
   position: absolute;
-  right: 40px;
-  top: 40px;
+  text-align: center;
+  top: 150px;
+  vertical-align: middle;
+  width: 300px;
 }
