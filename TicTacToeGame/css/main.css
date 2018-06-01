@@ -56,7 +56,6 @@ body {
   border: 2px solid #05528A;
   display: grid;
   grid-template-columns: repeat(3, 15vw);
-  position: relative;
   width: 45vw;
 }
 
@@ -154,16 +153,16 @@ button:focus{
   border: 2px solid #A7DEFA;
   border-radius: 5px;
   color: #E4FF00;
-  display: none;
+  display: "block";
   font-family: 'Roboto', sans-serif;
   font-size: 30px;
   height: 60px;
-  left: 120px;
+  left: 60px;
   line-height: 60px;
   opacity: 0.9;
   position: absolute;
   text-align: center;
-  top: 150px;
+  top: 60px;
   vertical-align: middle;
-  width: 300px;
+  width: 200px;
 }

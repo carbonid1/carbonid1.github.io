@@ -6,6 +6,12 @@
   button {
     width: 130px !important;
   }
+
+  .results-module {
+    top: 200px;
+    left: 300px;
+    width: 150px;
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -37,5 +43,12 @@
 
   .block {
     height: 10vh;
+  }
+
+  .results-module {
+    font-size: 10px;
+    top: 50px;
+    left: 50px;
+    width: 70px;
   }
 }
