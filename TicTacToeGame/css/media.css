@@ -1,0 +1,41 @@
+@media only screen and (max-width: 900px) {
+  .score-table {
+    font-size: 20px;
+  }
+
+  button {
+    width: 130px !important;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .score-table {
+    width: 30vw;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  button {
+    width: 100px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .block {
+    height: 14vh;
+  }
+
+  button {
+    width: 70px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    font-size: 30px;
+  }
+
+  .block {
+    height: 10vh;
+  }
+}

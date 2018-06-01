@@ -71,54 +71,31 @@ setTimeout(openModal, 500);
 // modal window
 function openModal() {
   modalWindow.style.width = "100%";
+  modalContent.style.display = "flex";
+  X_score = 0;
+  scoreTableX.textContent = `X : ${X_score}`;
+  O_score = 0;
+  scoreTableO.textContent = `O : ${O_score}`;
 }
 
 function closeModal() {
   modalWindow.style.width = "0%";
-}
-
-twoPlayersBtn.onclick = function() {
-  closeModal();
   modalContent.style.display = "none";
-};
-
-function currentBoard() {
-  let arr = [];
-  for (let block of blocks) {
-    arr.push(block.dataset.token);
-  }
-
-  function checkWinner(n) {
-    if ( (arr[0] == n && arr[1] == n && arr[2] == n) || (arr[3] == n && arr[4] == n && arr[5] == n) || (arr[6] == n && arr[7] == n && arr[8] == n) || (arr[0] == n && arr[3] == n && arr[6] == n) || (arr[1] == n && arr[4] == n && arr[7] == n) || (arr[2] == n && arr[5] == n && arr[8] == n) || (arr[0] == n && arr[4] == n && arr[8] == n) || (arr[2] == n && arr[4] == n && arr[6] == n) ) {
-      if (n == "X") {
-        X_score += 1;
-        scoreTableX.textContent = `X : ${X_score}`;
-      } else {
-        O_score += 1;
-        scoreTableO.textContent = `O : ${O_score}`;
-      }
-      resultsModule.style.display = "block";
-      resultsModule.textContent = `${n} has won`;
-      fieldContainer.removeEventListener("mouseup", drawToken);
-      setTimeout(function() {resultsModule.style.display = "none";}, 1500);
-      // return is to prevent double result, when n = "o" and "x" won or it is a draw
-      return "done";
-    } else if (!arr.includes("none")) {
-      resultsModule.style.display = "block";
-      resultsModule.textContent = "It is a draw";
-      setTimeout(function() {resultsModule.style.display = "none";}, 1500);
-      return "done";
-    }
-  }
-
-  if( checkWinner("X") == "done") {
-    return;
-  } else checkWinner("O");
 }
 
 // two players logic
-function drawToken(ev) {
+twoPlayersBtn.onclick = function() {
+  closeModal();
+  fieldContainer.addEventListener("mouseup", drawToken);
+};
 
+function drawToken(ev) {
+  drawSVG (ev);
+  // board's state
+  currentBoard();
+}
+
+function drawSVG (ev) {
   // if not empty display proper svg token
   if (fieldContainer.classList.contains("xIsNext") && !ev.target.classList.contains("notEmpty")) {
     ev.target.querySelector(".X").style.display = "block";
@@ -133,11 +110,52 @@ function drawToken(ev) {
     ev.target.classList.add("notEmpty");
     ev.target.dataset.token = ("O");
   }
-  // board's state
-  currentBoard();
 }
 
-fieldContainer.addEventListener("mouseup", drawToken);
+function currentBoard() {
+  let arr = [];
+  for (let block of blocks) {
+    arr.push(block.dataset.token);
+  }
+
+  function checkWinner(n) {
+    if ((arr[0] == n && arr[1] == n && arr[2] == n) ||
+      (arr[3] == n && arr[4] == n && arr[5] == n) ||
+      (arr[6] == n && arr[7] == n && arr[8] == n) ||
+      (arr[0] == n && arr[3] == n && arr[6] == n) ||
+      (arr[1] == n && arr[4] == n && arr[7] == n) ||
+      (arr[2] == n && arr[5] == n && arr[8] == n) ||
+      (arr[0] == n && arr[4] == n && arr[8] == n) ||
+      (arr[2] == n && arr[4] == n && arr[6] == n)) {
+      if (n == "X") {
+        X_score += 1;
+        scoreTableX.textContent = `X : ${X_score}`;
+      } else {
+        O_score += 1;
+        scoreTableO.textContent = `O : ${O_score}`;
+      }
+      resultsModule.style.display = "block";
+      resultsModule.textContent = `${n} has won`;
+      fieldContainer.removeEventListener("mouseup", drawToken);
+      setTimeout(function() {
+        resultsModule.style.display = "none";
+      }, 1500);
+      // return is to prevent double result, when n = "o" and "x" won or it is a draw
+      return "done";
+    } else if (!arr.includes("none")) {
+      resultsModule.style.display = "block";
+      resultsModule.textContent = "It is a draw";
+      setTimeout(function() {
+        resultsModule.style.display = "none";
+      }, 1500);
+      return "done";
+    }
+  }
+
+  if (checkWinner("X") == "done") {
+    return;
+  } else checkWinner("O");
+}
 
 // nav buttons
 function clearField() {
@@ -150,12 +168,12 @@ function clearField() {
   }
   for (let block of blocks) {
     block.dataset.token = "none";
-    if ( block.classList.contains("notEmpty") ) {
+    if (block.classList.contains("notEmpty")) {
       block.classList.remove("notEmpty");
     }
   }
 
-  if ( fieldContainer.classList.contains("oIsNext") ) {
+  if (fieldContainer.classList.contains("oIsNext")) {
     fieldContainer.classList.remove("oIsNext");
     fieldContainer.classList.add("xIsNext");
   }
@@ -166,15 +184,12 @@ function clearField() {
 againBtn.onclick = function() {
   clearField();
   resultsModule.style.display = "none";
+  // nextPlayer = aiPlayer;
 };
 
 toMenuBtn.onclick = function() {
   clearField();
+  fieldContainer.removeEventListener("mouseup", drawToken);
   resultsModule.style.display = "none";
   openModal();
-  modalContent.style.display = "block";
-  X_score = 0;
-  scoreTableX.textContent = `X : ${X_score}`;
-  O_score = 0;
-  scoreTableX.textContent = `O : ${O_score}`;
 };

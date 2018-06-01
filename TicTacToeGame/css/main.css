@@ -18,7 +18,8 @@ body {
   color: #1531AE;
   font-family: 'Indie Flower', cursive;
   font-size: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .score-table {
@@ -35,13 +36,18 @@ body {
   justify-content: space-around;
   width: 15vw;
   height: 50px;
+  line-height: 50px;
 }
 
 .score-table .score-x {
+  line-height: inherit;
+  vertical-align: middle;
   color: #46D8C0;
 }
 
 .score-table .score-o {
+  line-height: inherit;
+  vertical-align: middle;
   color: #F3CF39;
 }
 
@@ -98,12 +104,21 @@ body {
   z-index: 1;
 }
 
+.modal-content {
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+  width: 400px;
+}
+
 button {
   background-color: #483D3F;
   border: 2px solid #E4FDE1;
   border-radius: 5px;
   color: #FFDBB5;
-  margin-right: 30px;
   transition: 0.3s all;
 }
 
@@ -124,10 +139,6 @@ button:focus{
   transform: none;
 }
 
-.modal-content .two-players-btn {
-  margin-right: 0;
-}
-
 .nav {
   display: -webkit-flex;
   display: -ms-flex;
@@ -136,10 +147,6 @@ button:focus{
   justify-content: space-around;
   margin-top: 30px;
   width: 45vw;
-}
-
-.toMenu-btn {
-  margin: 0;
 }
 
 .results-module {
