@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css?family=Gugi|Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body>
+  <h1>Calendar on the native JavaScript ES6</h1>
+  <form class="inputContainer" onkeypress="return event.keyCode != 13;">
+    <label for="yearToShow">Enter the year you'd like to look at:</label>
+    <input type="text" pattern=".{4,}" maxlength="4" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="yearToShow" id="yearToShow" placeholder="type here" required>
+    <svg class="line" viewBox="0 0 40 2" preserveAspectRatio="none">
+      <path d="M0 1 L40 1" />
+      <path d="M0 1 L40 1" class="focus"/>
+      <path d="M0 1 L40 1" class="valid"/>
+      <path d="M0 1 L40 1" class="invalid"/>
+    </svg>
+    <button type="button" id="submitYear">Submit</button>
+  </form>
+  <h2 id="yearHolder"></h2>
+  <div id="wrapper"></div>
+
+	<script src="js/main.js"></script> <!-- my JS -->
+	<script>/*eslint-disable*/document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> <!-- auto-f5-plugin -->
+	
+</body>
+</html>

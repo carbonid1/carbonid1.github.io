@@ -1,0 +1,186 @@
+* {box-sizing: border-box; padding: 0; margin: 0;}
+
+#tweetQuote {
+    display: block;
+    width: 55px;
+    height: 55px;
+    background: url("icons/Twitter.svg") no-repeat center;
+    background-size: cover;
+	position: absolute;
+	right: 5%;
+	bottom: 5%;
+ }
+
+ #tweetQuote:hover {
+	opacity: 0.5;
+ }
+
+#myWindow {
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+
+    position: relative;
+
+    display: none;
+    flex-direction: column;
+
+    width: 80%;
+    margin: 5% auto auto auto;
+    min-height: 300px;
+
+    border: solid 4px #63B3C9;
+    background: linear-gradient(to bottom, rgba(235,241,246,1) 8%,rgba(171,211,238,1) 36%,rgba(137,195,235,1) 69%,rgba(213,235,251,1) 94%);
+
+    align-items: center;
+    justify-content: space-around;
+}
+
+#authorName {
+  margin-top: 20px;
+  font-size: 23px;
+}
+
+#quoteHolder {
+    width: calc(100% - 10rem);
+    min-height: 200px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+#mainMenuBtn {
+    font-family: Indie Flower, cursive;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 100px;
+
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+
+    display: block;
+
+    width: 100px;
+    height: 100px;
+
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: white;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, rgba(242,130,91,1) 0%,rgba(229,91,43,1) 50%,rgba(240,113,70,1) 100%);
+    border: 2px solid #000;
+}
+#mainMenuBtn:hover {
+  background: linear-gradient(to bottom, rgba(249,198,103,1) 0%,rgba(247,150,33,1) 100%);
+}
+
+#getQuoteBtn {
+    font-family: Indie Flower, cursive;
+    font-weight: bold;
+    line-height: 22px;
+
+    display: block;
+
+    width: 20%;
+    min-width: 150px;
+    height: 30px;
+    margin: 40px 0;
+
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+
+    border: solid 4px #52bab3;
+    color: #000;
+    background: #adede7;
+}
+
+#getQuoteBtn:hover {
+  background: #52BAB3;
+  color: #fff;
+}
+
+
+/* -----------MAIN MENU------------ */
+.menu {
+  position: relative;
+  list-style: none;
+  margin: 30px auto;
+
+  /* padding trick for maintaining aspect ratio */
+  height: 0;
+  padding: 0;
+  padding-top: 43%;
+  width: 40%;
+}
+
+.menu li { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  -webkit-clip-path: url(#sector);
+          clip-path: url(#sector);
+}
+
+.menu li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.menu li:hover {
+  background-color: #47c4e6;
+}
+
+.one {
+  background-color: #A5E2F3;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.two {
+  background-color: #86d8ef;
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+}
+
+.three {
+  background-color: #A5E2F3;
+  -webkit-transform: rotate(-120deg);
+          transform: rotate(-120deg);
+}
+
+.four {
+  background-color: #86d8ef;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.five {
+  background-color: #A5E2F3;
+  -webkit-transform: rotate(-240deg);
+          transform: rotate(-240deg);
+}
+
+.six {
+  background-color: #86d8ef;
+  -webkit-transform: rotate(-300deg);
+          transform: rotate(-300deg);
+}
+
+.menu .icon {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  right: 12%;
+  top: 24%;
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+/*-----------------/MAIN MENU-------------- */
